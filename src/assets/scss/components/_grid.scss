@@ -1,0 +1,32 @@
+/* ------------------------------------------------------------ *\
+    O Cols
+\* ------------------------------------------------------------ */
+
+.o-cols {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+
+    @include tablet-portrait {
+        margin: 0 -10px;
+    }
+}
+
+.o-col {
+    width: 25%;
+    padding: 15px;
+    display: flex;
+
+    @include tablet-portrait {
+        width: 33.33%;
+        padding: 10px;
+    }
+
+    @include mobile {
+        width: 50%;
+    }
+
+    @include mobile-small {
+        width: 100%;
+    }
+}

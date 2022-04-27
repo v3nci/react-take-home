@@ -1,0 +1,12 @@
+body {
+	font-family: $font-base;
+	font-size: 15px;
+	line-height: 1.25;
+	color: $color-base;
+	background: $color-body-bg;
+	-webkit-overflow-scrolling: touch;
+}
+
+h1 {
+	font-size: 30px;
+}

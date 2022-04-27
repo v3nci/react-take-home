@@ -1,0 +1,75 @@
+/* ------------------------------------------------------------ *\
+    Card
+\* ------------------------------------------------------------ */
+
+.c-card {
+    display: flex;
+
+    button {
+        appearance: none;
+        border: none;
+        border-radius: 5px;
+        padding: 20px 15px;
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+        position: relative;
+        background: $color-highlight;
+        overflow: hidden;
+        transition: background .3s, color .3s, box-shadow .3s;
+
+        &:hover,
+        &:focus {
+            outline: none;
+            background: $color-hover;
+            color: $color-hover-text;
+        }
+    }
+    
+    .h3 {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .c-card__image {
+        position: relative;
+        margin-top: auto;
+        margin-bottom: 10px;
+    }
+
+    .c-card__overlay {
+        padding: 20px;
+        background: #ffff;
+        color: $color-hover;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        transform: translateY(100%);
+        opacity: 0;
+        z-index: 10;
+        transition: opacity .3s, transform .3s;
+        font-size: 18px;
+
+        @include mobile {
+            font-size: 15px;
+        }
+    }
+
+    button:hover,
+    button:focus {
+        .c-card__overlay {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+
+    .is-active {
+        .c-card__overlay {
+            transform: translateY(0);
+            opacity: 1;
+            color: $color-highlight;
+        }
+    }
+}
