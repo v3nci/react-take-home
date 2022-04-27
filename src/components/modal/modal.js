@@ -3,6 +3,7 @@ import ModalWarp from "./modal-warp";
 
 const Modal = ({ children, onClose }) => {
 	const nodeRef = useRef(null);
+	
 	useEffect(() => {
 		const closeOnEscapeKey = (e) => (e.key === "Escape" ? onClose() : null);
 
@@ -14,7 +15,7 @@ const Modal = ({ children, onClose }) => {
 
 	return (
 		<ModalWarp>
-			<div className="c-modal" ref={nodeRef}>
+			<div className="c-modal" ref={nodeRef} data-testid="modal">
                 <div className="c-modal__dialog">
                     <button onClick={onClose} className="c-modal__close" aria-label="Close">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">

@@ -7,7 +7,7 @@ const Card = ({
     active
 }) => {
   return (
-    <div className="c-card">
+    <div className="c-card" data-testid="card">
         <button type="button" className={`${active ? 'is-active' : ''}`} onClick={onClick}>
             <h3 className="h3">{name}</h3>
 

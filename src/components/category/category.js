@@ -20,13 +20,13 @@ const Category = ({
   }
 
   return (
-    <div className="c-category">
+    <div className="c-category" data-testid="category">
         <h2 className="h2">{title}</h2>
 
         <Grid>
           {items.length && items.map(item => (
             <Card
-                active={selectedItems[categoryId] === item.id}
+                active={selectedItems ? selectedItems[categoryId] === item.id : false}
                 key={item.id}
                 name={item.title}
                 imageSrc={item.photoUrL}
