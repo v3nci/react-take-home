@@ -1,0 +1,29 @@
+/* ------------------------------------------------------------ *\
+    Bannlot
+\* ------------------------------------------------------------ */
+
+.ballot {
+    .ballot__btn {
+        appearance: none;
+        border: none;
+        border-radius: 5px;
+        background: $color-highlight;
+        position: fixed;
+        bottom: 15px;
+        right: 15px;
+        z-index: 10;
+        padding: 20px;
+        transition: background .3s, color .3s;
+
+        &:hover {
+            background: $color-hover;
+            color: $color-hover-text;
+        }
+
+        &[disabled] {
+            background: $color-hover-text;
+            color: $color-hover;
+            pointer-events: none;
+        }
+    }
+}

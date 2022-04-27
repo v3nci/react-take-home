@@ -1,0 +1,18 @@
+/* ------------------------------------------------------------ *\
+    Summary List
+\* ------------------------------------------------------------ */
+
+.summary-list {
+    padding: 20px 0;
+    font-size: 18px;
+    list-style: none;
+    text-align: left;
+
+    li:not(:last-child) {
+        margin-bottom: 10px;
+    }
+
+    @include mobile {
+        font-size: 16px;
+    }
+}

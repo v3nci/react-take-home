@@ -1,0 +1,47 @@
+/* ------------------------------------------------------------ *\
+    Modal
+\* ------------------------------------------------------------ */
+
+.c-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+
+    h2 {
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        margin-bottom: 10px;
+    }
+
+    .c-modal__dialog {
+        color: $color-body-bg;
+        background: #fff;
+        margin: auto;
+        width: 100%;
+        max-width: 720px;
+        position: relative;
+        text-align: center;
+    }
+
+    .c-modal__close {
+        appearance: none;
+        border: none;
+        border-radius: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 5px;
+        background: transparent;
+    }
+
+    .c-modal__content {
+        padding: 30px;
+    }
+}

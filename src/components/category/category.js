@@ -1,15 +1,22 @@
-import React, { memo, useState } from 'react'
+import React, { memo, useContext } from 'react'
+
+import { BallotContext } from "contexts/ballot-context/ballot-context";
 import Grid from 'components/grid/grid';
 import Card from 'components/card/card';
 
 const Category = ({
+    categoryId,
     title,
     items
 }) => {
-  const [activeId, setActiveId] = useState('');
+  const { updateSelectedItems, selectedItems } = useContext(BallotContext)
 
   const toggleActiveId = (id) => {
-    activeId === id ? setActiveId('') : setActiveId(id)
+    if(selectedItems[categoryId] && selectedItems[categoryId] === id) {
+      updateSelectedItems(categoryId, '')
+    } else {
+      updateSelectedItems(categoryId, id)
+    }
   }
 
   return (
@@ -19,7 +26,7 @@ const Category = ({
         <Grid>
           {items.length && items.map(item => (
             <Card
-                active={activeId === item.id}
+                active={selectedItems[categoryId] === item.id}
                 key={item.id}
                 name={item.title}
                 imageSrc={item.photoUrL}
@@ -32,6 +39,7 @@ const Category = ({
 }
 
 Category.defaultProps = {
+    categoryId: '',
     title: '',
     items: []
 }
